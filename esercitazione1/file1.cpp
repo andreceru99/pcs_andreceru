@@ -23,7 +23,8 @@ int main(int argc, const char *argv[])
 
 
 
-    while (!ifs.eof()) {
+    while (!ifs.eof())  {
+	    // finché non finiscono le righe
         ifs >> citta >> t0 >> t6 >> t12 >> t18;
         // per ogni riga del file prendiamo il nome della città e le relative temperature
         double media = (t0 + t6 + t12 + t18)/4.0; // definisco la variabile media
