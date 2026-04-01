@@ -82,16 +82,24 @@ public:
     /*Incremento*/
     //operatore +=
     rational& operator+=(const rational& other) {   // a+=b
-        // se uno dei due è NaN rimane NaN
-        if ((den_ == 0 && num_ == 0) || (other.den_ == 0 && other.num_ == 0)) {
-            num_ = 0;
-            den_ = 0;
+        // se uno è NaN rimane NaN
+        if (den_ == 0 && num_ == 0) {
+        return *this;
+        }
+        if (other.den_ == 0 && other.num_ == 0) {
+            num_ = 0; den_ = 0;
             return *this;
         }
 
-        //caso Inf + Inf
-        if (den_ ==0 && (num_ > 0) != other.num_)
-
+        // se uno è Inf rimane Inf
+        if (den_ == 0) {
+            return *this;
+        }
+        if (other.den_ == 0) {
+            num_ = other.num_;
+            den_ = 0;
+            return *this;
+        }
         //modifico num_ e den_
         num_ = num_*other.den_+den_*other.num_;
         den_ = den_*other.den_;
@@ -110,15 +118,20 @@ public:
     /*Sottrazione*/
     rational& operator-=(const rational& other) {  
 
-        // NaN
-        if (den_ == 0 && num_ == 0) return *this;
+        // caso NaN
+        if (den_ == 0 && num_ == 0) {
+            return *this;
+        }
         if (other.den_ == 0 && other.num_ == 0) {
             num_ = 0; den_ = 0;
             return *this;
         }
 
-        // Inf
-        if (den_ == 0) return *this;
+        // Inf - razionale
+        if (den_ == 0) {
+            return *this;
+        }
+        // razionale -Inf
         if (other.den_ == 0) {
             num_ = -other.num_;
             den_ = 0;
@@ -139,18 +152,25 @@ public:
     rational& operator*=(const rational& other) {   
         
         // NaN
-        if (den_ == 0 && num_ == 0) return *this;
+        if (den_ == 0 && num_ == 0) {
+            return *this;
+        }
         if (other.den_ == 0 && other.num_ == 0) {
             num_ = 0; den_ = 0;
             return *this;
         }
 
-        // Inf
+        // caso in cui almeno uno dei due è infinito
         if (den_ == 0 || other.den_ == 0) {
             if (num_ == 0 || other.num_ == 0) {
                 num_ = 0; den_ = 0; // NaN
             } else {
-                num_ = (num_ > 0 ? 1 : -1) * (other.num_ > 0 ? 1 : -1);
+                if (((num_ > 0) && (other.num_ > 0)) || ((num_<0) && (other.num_) <0)) {
+                    num_ = 1;
+                }
+                else {
+                    num_ = -1;
+                }
                 den_ = 0;
             }
             return *this;
@@ -169,26 +189,31 @@ public:
     rational& operator/=(const rational& other) {   
         
         // NaN
-        if (den_ == 0 && num_ == 0) return *this;
+        if (den_ == 0 && num_ == 0) {
+            return *this;
+        }
         if (other.den_ == 0 && other.num_ == 0) {
         num_ = 0;
         den_ = 0;
         return *this;
     }
 
-
+        // caso in cui divido per zero
         if(other.num_ == 0) {
-            // sto dividendo per zero
+            // potrei star dividendo un infinitoe
             den_ = 0;
             normalize();
             return *this;
         }
 
-        // Inf
-        if (den_ == 0) return *this;
+        // caso infinito diviso razionale
+        if (den_ == 0) {
+            return *this; //rimane infinito
+        }
+        // caso in cui divido per infinito
         if (other.den_ == 0) {
         num_ = 0;
-        den_ = 0; // Inf / Inf = NaN
+        den_ = 1;  // ottengo 0
         return *this;
     }
         num_ = num_*other.den_;
