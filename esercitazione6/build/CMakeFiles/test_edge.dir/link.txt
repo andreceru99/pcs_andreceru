@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall -Wextra -Wpedantic -Wl,--dependency-file=CMakeFiles/test_edge.dir/link.d CMakeFiles/test_edge.dir/test_edge.cpp.o CMakeFiles/test_edge.dir/unidirected_edge.cpp.o -o test_edge

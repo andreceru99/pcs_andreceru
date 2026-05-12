@@ -1,4 +1,0 @@
-/home/pcsdocker/Data/pcs_andreceru/esercitazione6/build/CMakeFiles/test_edge.dir
-/home/pcsdocker/Data/pcs_andreceru/esercitazione6/build/CMakeFiles/test_graph.dir
-/home/pcsdocker/Data/pcs_andreceru/esercitazione6/build/CMakeFiles/edit_cache.dir
-/home/pcsdocker/Data/pcs_andreceru/esercitazione6/build/CMakeFiles/rebuild_cache.dir
