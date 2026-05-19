@@ -5,6 +5,7 @@
 
 #include "graph_visit.hpp"
 #include "recursive_dfs.hpp"
+#include "GraphViz.hpp"
 
 //volevo vedere l'ordine di visita dei nodi senza sporcare graph_visit.hpp
 template<typename Container> 
@@ -112,6 +113,37 @@ int main() {
     for (const auto& edge : recursive_tree.all_edges()) {
         std::cout << edge << "\n";
     }
+
+    // per i grafici ho cambiato esempio perché altrimenti venivano uguali
+    unidirected_graph G2;
+    G2.add_edge(unidirected_edge(1,2));
+    G2.add_edge(unidirected_edge(1,3));
+
+    G2.add_edge(unidirected_edge(2,4));
+    G2.add_edge(unidirected_edge(2,5));
+
+    G2.add_edge(unidirected_edge(3,6));
+    G2.add_edge(unidirected_edge(3,7));
+
+    G2.add_edge(unidirected_edge(4,8));
+    G2.add_edge(unidirected_edge(5,8));
+
+    G2.add_edge(unidirected_edge(6,9));
+    G2.add_edge(unidirected_edge(7,9));
+
+    G2.add_edge(unidirected_edge(8,10));
+    G2.add_edge(unidirected_edge(9,10));
+
+    auto bfs_tree2 = graph_visit(G2,1,q);
+    auto dfs_tree2 = graph_visit(G2,1,s);
+    auto recursive_tree2 = recursive_dfs(G2,1);
+
+
+    export_to_dot(bfs_tree2, "bfs.dot");
+
+    export_to_dot(dfs_tree2, "dfs.dot");
+
+    export_to_dot(recursive_tree2, "recursive_dfs.dot");
 
 
     return 0;

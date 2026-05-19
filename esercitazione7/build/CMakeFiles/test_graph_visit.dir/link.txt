@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall -Wshadow -Werror=vla -Wl,--dependency-file=CMakeFiles/test_graph_visit.dir/link.d CMakeFiles/test_graph_visit.dir/test_graph_visit.cpp.o CMakeFiles/test_graph_visit.dir/unidirected_graph.cpp.o CMakeFiles/test_graph_visit.dir/unidirected_edge.cpp.o -o test_graph_visit
