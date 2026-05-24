@@ -1,0 +1,24 @@
+/*
+Output tempi misurati con size = 100:
+
+Bubble sort medio: 0.0775346ms
+Insertion sort medio: 0.0222304 ms
+Selection sort medio: 0.0424375 ms
+Quicksort medio: 0.00979833 ms
+Mergesort medio: 0.0625571 ms
+std::sort medio: 0.0020725 ms
+
+
+Output tempi misurati con size = 10000:
+Bubble sort medio: 310.791ms
+Insertion sort medio: 79.9092 ms
+Selection sort medio: 149.745 ms
+Quicksort medio: 1.82893 ms
+Mergesort medio: 4.14442 ms
+std::sort medio: 0.0915912 ms
+*/
+
+
+Dagli Output si vede che il mergesort viene rallentato molto dalle operazioni di allocazione di memoria, infatti per vettori piccoli risulta più lento dell'insertion sort.
+Utilizzando vettori di dimensioni maggiori compare maggiormente il comportamento quadratico dell'insertion sorto e il mergesort risulta più veloce.
+Inoltre è più facile notare che i primi 3 hanno una complessità computazionale quadratica, mentre gli ultimi  3 logaritmica; infatti per vettori di dimensioni grandi risultano nettamente più veloci.

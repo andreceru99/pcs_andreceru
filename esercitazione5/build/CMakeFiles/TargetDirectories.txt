@@ -1,0 +1,4 @@
+/Users/andreceru/Desktop/Docker/Data/pcs_andreceru/esercitazione5/build/CMakeFiles/test_sorts.dir
+/Users/andreceru/Desktop/Docker/Data/pcs_andreceru/esercitazione5/build/CMakeFiles/measure_sorts.dir
+/Users/andreceru/Desktop/Docker/Data/pcs_andreceru/esercitazione5/build/CMakeFiles/edit_cache.dir
+/Users/andreceru/Desktop/Docker/Data/pcs_andreceru/esercitazione5/build/CMakeFiles/rebuild_cache.dir
