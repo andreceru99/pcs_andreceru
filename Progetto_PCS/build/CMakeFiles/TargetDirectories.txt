@@ -1,0 +1,3 @@
+/Users/andreceru/Desktop/Docker/Data/pcs_andreceru/Progetto PCS/build/CMakeFiles/progetto.dir
+/Users/andreceru/Desktop/Docker/Data/pcs_andreceru/Progetto PCS/build/CMakeFiles/edit_cache.dir
+/Users/andreceru/Desktop/Docker/Data/pcs_andreceru/Progetto PCS/build/CMakeFiles/rebuild_cache.dir
